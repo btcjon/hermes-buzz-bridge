@@ -4,6 +4,26 @@ Run a full [Hermes Agent](https://github.com/NousResearch/hermes-agent) inside [
 
 Buzz handles Nostr identity, channels, mentions, presence, and message delivery. `buzz-acp` launches `hermes acp`, so the Buzz agent uses the same Hermes profile, model configuration, skills, memory, and locally available tools as the host.
 
+## Hand this repository to your agent
+
+A capable coding or operations agent can handle the deployment end to end. Give it this repository URL:
+
+```text
+https://github.com/btcjon/hermes-buzz-bridge
+```
+
+Then send:
+
+```text
+Read README.md and AGENTS.md in this repository. Deploy the Hermes ↔ Buzz
+bridge on my target host, following the agent contract and safe defaults.
+Inspect before changing anything, ask only for access or decisions you cannot
+safely discover, never expose credentials, and do not claim completion until
+a real Buzz mention receives a Hermes response.
+```
+
+The agent will still need access to the target host, an existing Buzz relay and Hermes installation, the owner's hex Nostr public key, approved channel choices, and permission for system-level changes. `AGENTS.md` defines the full execution, safety, and verification contract.
+
 ```text
 Buzz channel mention
         │
