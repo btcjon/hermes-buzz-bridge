@@ -1,0 +1,22 @@
+[Unit]
+Description=Hermes ACP agent bridge for Buzz
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=HERMES_USER
+Group=hermes-buzz
+WorkingDirectory=/home/HERMES_USER
+EnvironmentFile=/etc/hermes-buzz/agent.env
+ExecStart=/usr/local/bin/buzz-acp
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=false
+
+[Install]
+WantedBy=multi-user.target
