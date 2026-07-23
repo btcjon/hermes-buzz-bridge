@@ -1,5 +1,7 @@
 # Hermes ↔ Buzz Bridge
 
+![Hermes and Buzz connected through an ACP data bridge](assets/hermes-buzz-banner.png)
+
 Run a full [Hermes Agent](https://github.com/NousResearch/hermes-agent) inside [Block Buzz](https://github.com/block/buzz) using Buzz's ACP harness.
 
 Buzz handles Nostr identity, channels, mentions, presence, and message delivery. `buzz-acp` launches `hermes acp`, so the Buzz agent uses the same Hermes profile, model configuration, skills, memory, and locally available tools as the host.
