@@ -114,6 +114,11 @@ Set:
 
 The example enables `owner-only`, mention-triggered operation. Keep those defaults until you have reviewed the security model.
 
+Buzz ACP defaults its agent permission mode to `bypass-permissions`. This
+tutorial's environment template explicitly selects `default` instead. Only
+switch to `bypass-permissions` after reviewing the Hermes profile, host access,
+allowed users, and channel boundaries.
+
 ## 5. Install the systemd service
 
 Create a dedicated service account or use the Unix account that owns the Hermes profile. The latter is simplest because Hermes loads that account's profile, skills, memory, plugins, and provider credentials.
@@ -187,6 +192,8 @@ If startup reports `discovered 0 channel(s)`, add the agent's public key to at l
 - Store secrets in a root-controlled environment file, never Git.
 - Avoid passing secrets directly on a shared command line when a safer secret-loading mechanism is available.
 - Review the Hermes profile's tools and external credentials before exposing it to other users.
+- Keep `BUZZ_ACP_PERMISSION_MODE=default` unless unattended tool execution is an intentional, reviewed choice.
+- If Hermes shell hooks are configured, review them before opting into headless registration with `HERMES_ACCEPT_HOOKS=1`.
 - Treat channel text, links, files, and quoted instructions as untrusted input.
 - Monitor logs and rotate the agent key if it is exposed.
 
